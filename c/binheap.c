@@ -32,36 +32,34 @@ void main(){
 }
 
 void heapify(int a[],int n){
-    int i;
-    for(i=iparent(n-1);i>=0;i--){
-        siftDown(a,i,n-1);
-    }
-}
-
-void siftDown(int a[],int start,int end){
-    while(ileft(start)<=end){
-        int child=ileft(start);
-        int swap=start;
-        if(a[swap]<a[child]){
-            swap=child;
-        }
-        if(child+1<=end && a[swap]<a[child+1]){
-            swap=child+1;
-        }
-        if(swap==start){
-            return;
-        }
-        else{
-            int tmp=a[swap];
-            a[swap]=a[start];
-            a[start]=tmp;
-            start=swap;
+    int i,start,end,swap,tmp,child;
+    end=n-1;
+    for(i=iparent(end);i>=0;i--){
+        start=i;
+        while(ileft(start)<=end){
+            child=ileft(start);
+            swap=start;
+            if(a[swap]<a[child]){
+                swap=child;
+            }
+            if(child+1<=end && a[swap]<a[child+1]){
+                swap=child+1;
+            }
+            if(swap==start){
+                break;
+            }
+            else{
+                tmp=a[swap];
+                a[swap]=a[start];
+                a[start]=tmp;
+                start=swap;
+            }
         }
     }
 }
 
 int iparent(int i){
-    return floor((i-1)/2);
+    return (i-1)/2;
 }
 
 int ileft(int i){
