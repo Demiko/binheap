@@ -5,7 +5,6 @@
 void heapify(int[],int);
 int iparent(int);
 int ileft(int);
-void siftDown(int[],int,int);
 void printarr(int[],int);
 
 void main(){
