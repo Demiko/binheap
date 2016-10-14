@@ -36,7 +36,7 @@ for path in dirs:
             print("not ok",count,"-",path,"can't make")
             continue
     if os.path.exists(path + "/binheap"):
-        os.chmod(path + "/binheap", 755)
+        os.chmod(path + "/binheap", 0o744)
     else:
         print("not ok",count,"-","no executable",path)
         continue
