@@ -49,15 +49,12 @@ int main()
 {
 
 	int n;
-	printf("enter the number of elements\n");
 	scanf("%d",&n);
-	printf("Enter each element\n");
 	for (int i = 0; i < n; i++)
 	{
 		scanf("%d",&arr[i]);
 	}
 	heap_sort(n);
-    printf("----------\n");
 	for (int i = 0; i < n; i++)
 	{
 		printf("%d\n", arr[i]);;
