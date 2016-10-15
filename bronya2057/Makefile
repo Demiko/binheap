@@ -1,3 +1,3 @@
-exe:heapsort
-heapsort:heapsort.c
-	gcc -std=c11 -o heapsort heapsort.c
+exe:binheap
+binheap:binheap.c
+	gcc -std=c11 -o binheap binheap.c
