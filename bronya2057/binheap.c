@@ -1,13 +1,13 @@
-
 #include <stdio.h>
-#define NMAX 20
-int arr[NMAX + 1];
+#include <cstdlib>
+//int arr[];
+int *arr = nullptr;
 void swap(int*, int*);
 void heapify(int pos, int n) {
 	while (2 * pos + 1 < n) {
 
-		int t = 2 * pos + 1;
-		if (2 * pos + 2 < n && arr[2 * pos + 2] >= arr[t]) 
+		int t = 2 * pos + 1;	//Изначально выбираем левого ребенка
+		if (2 * pos + 2 < n && arr[2 * pos + 2] >= arr[t]) //Проверяем детей кто больше того выбираем
 		{
 			t = 2 * pos + 2;
 		}
@@ -47,17 +47,25 @@ void swap(int* a, int*b )
 
 int main()
 {
-
 	int n;
-	scanf("%d",&n);
+	scanf("%d", &n);
+	arr = (int*)malloc(n*sizeof(int));
+
+	
+	if (arr == NULL)
+	{
+		exit(0);
+	}
+
 	for (int i = 0; i < n; i++)
 	{
-		scanf("%d",&arr[i]);
+		scanf("%d",arr+i);
 	}
 	heap_sort(n);
 	for (int i = 0; i < n; i++)
 	{
 		printf("%d\n", arr[i]);;
 	}
+	free(arr);
 	return 0;
 }
