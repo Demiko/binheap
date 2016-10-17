@@ -1,4 +1,4 @@
 all: binheap
 
 binheap:binheap.c
-	gcc binheap.c -std=c11 -o binheap 
+	gcc binheap.c -o binheap 
