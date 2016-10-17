@@ -1,13 +1,12 @@
-#include <stdio.h>
-#include <cstdlib>
-//int arr[];
-int *arr = nullptr;
+#include "stdio.h"
+#include "stdlib.h"
+int *arr =NULL ;
 void swap(int*, int*);
 void heapify(int pos, int n) {
 	while (2 * pos + 1 < n) {
 
-		int t = 2 * pos + 1;	//Изначально выбираем левого ребенка
-		if (2 * pos + 2 < n && arr[2 * pos + 2] >= arr[t]) //Проверяем детей кто больше того выбираем
+		int t = 2 * pos + 1;
+		if (2 * pos + 2 < n && arr[2 * pos + 2] >= arr[t]) 
 		{
 			t = 2 * pos + 2;
 		}
